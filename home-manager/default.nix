@@ -14,6 +14,9 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    ./games
+    ./cli 
+    ./wm
   ];
 
   nixpkgs = {
@@ -40,8 +43,8 @@
 
   # TODO: Set your username
   home = {
-    username = "your-username";
-    homeDirectory = "/home/your-username";
+    username = "emph";
+    homeDirectory = "/home/emph";
   };
 
   # Add stuff for your user as you see fit:
