@@ -54,7 +54,7 @@
           specialArgs = {inherit inputs;};
           modules = [
             ./hosts/loki/configuration.nix
-            inputs.home-manager.nixosModules.default
+            home-manager.nixosModules.home-manager
           ];
         };
       };
