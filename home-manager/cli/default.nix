@@ -5,6 +5,8 @@
     #./nvim.nix
     ./zsh.nix
   ];
-  cli.fastfetch.enable = 
-    lib.mkDefault true;
+  cli = {
+      fastfetch.enable =
+        mkDefault true;
+        };
 }
