@@ -7,7 +7,6 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    ./../../home-manager
     ./../../nixos
   ];
 
@@ -33,6 +32,9 @@
         homeDirectory = "/home/emph";
         stateVersion = "23.11";
       };
+      imports = [
+        ./../../home-manager
+      ];
     };
   };
 
