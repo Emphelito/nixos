@@ -35,8 +35,9 @@
       imports = [
         ./../../home-manager
       ];
-
-      cli.kitty.enable = true;
+      cli = {
+          kitty.enable = true;
+      };
     };
   };
 
