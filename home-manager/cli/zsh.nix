@@ -12,7 +12,7 @@
     };
   };
 
-  config = lib.mkIf config.shell.zsh.enable {
+  config = lib.mkIf config.cli.zsh.enable {
     programs.zsh = {
       enable = true;
       autocd = true;
