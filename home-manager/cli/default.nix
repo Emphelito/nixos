@@ -8,5 +8,8 @@
   cli = {
       fastfetch.enable =
         lib.mkDefault true;
+      
+      zsh.enable = 
+        lib.mkDefault true;
         };
 }
