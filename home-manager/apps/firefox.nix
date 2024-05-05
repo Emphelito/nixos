@@ -5,10 +5,7 @@
 }: {
   options = {
     apps.firefox.enable =
-      lib.mkEnableOption "Firefox"
-      // {
-        default = config.apps.firefox.enable;
-      };
+      lib.mkEnableOption "Firefox";
   };
 
   config = lib.mkIf config.apps.firefox.enable {
