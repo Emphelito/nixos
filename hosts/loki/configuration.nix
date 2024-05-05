@@ -21,7 +21,7 @@
 
   users.users."emph" = {
     isNormalUser = true;
-    shell = pkgs.zsh;
+    #shell = pkgs.zsh;
     extraGroups = [ "wheel, audio, power" ];
   };
 
