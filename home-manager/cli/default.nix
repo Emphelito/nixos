@@ -2,7 +2,7 @@
   imports = [
     ./fastfetch.nix
     ./kitty.nix
-    ./nvim.nix
+    #./nvim.nix
     #./zsh.nix
   ];
 }
