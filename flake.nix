@@ -41,18 +41,17 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      specialArgs = {inherit inputs;};
     in
     {
       nixosConfigurations = {
         aegir = nixpkgs.lib.nixosSystem {
-          extraSpecialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs; };
           modules = [
             ./hosts/aegir/configuration.nix
           ];
         };
         loki = nixpkgs.lib.nixosSystem {
-          extraSpecialArgs = specialArgs;
+          specialArgs = {inherit inputs;};
           modules = [
             ./hosts/loki/configuration.nix
             inputs.home-manager.nixosModules.default
