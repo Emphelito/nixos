@@ -39,27 +39,22 @@
     , ...
     } @ inputs:
     let
-      inherit (self) outputs;
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      # NixOS configuration entrypoint
-      # Available through 'nixos-rebuild --flake .#your-hostname'
-      nixosConfigurations = {
-        # FIXME replace with your hostname
-        aegir = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
-          # > Our main nixos configuration file <
-          modules = [ ./hosts/aegir/configuration.nix ];
-        };
+      nixosConfiguration."aegir" = nixpkgs.lib.nixosSystem {
+        extraSpecialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/aegir/configuration.nix
+        ];
       };
-
-      homeConfigurations = {
-        "emph@aegir" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs; };
-          # > Our main home-manager configuration file <
-          modules = [ ./hosts/aegir/home.nix ];
-        };
+      nixosConfiguration."loki" = nixpkgs.lib.nixosSystem {
+        extraSpecialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/loki/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
       };
     };
 }
