@@ -5,7 +5,7 @@
       lib.mkEnableOption "Fastfetch";
   };
 
-  config = lib.mkIf config.fastfetch.enable {
+  config = lib.mkIf config.cli.fastfetch.enable {
     home.packages = with pkgs; [
         fastfetch
         ];
