@@ -41,6 +41,7 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      specialArgs = {inherit inputs;};
     in
     {
       nixosConfigurations = {
@@ -51,7 +52,7 @@
           ];
         };
         loki = nixpkgs.lib.nixosSystem {
-          home-manager.extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = specialArgs;
           modules = [
             ./hosts/loki/configuration.nix
             inputs.home-manager.nixosModules.default
