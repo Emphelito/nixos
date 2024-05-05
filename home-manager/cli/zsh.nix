@@ -4,14 +4,9 @@
 , ...
 }: {
   options = {
-    cli.zsh = {
-      enable =
-        lib.mkEnableOption "zsh" true;
-      enableNixShellPlugin =
-        lib.mkEnableOption "zsh nix shell plugin" true;
-    };
+    cli.zsh.enable =
+      lib.mkEnableOption "zsh" true;
   };
-
   config = lib.mkIf config.cli.zsh.enable {
     programs.zsh = {
       enable = true;
@@ -42,18 +37,7 @@
             file = "share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh";
             src = pkgs.zsh-fast-syntax-highlighting;
           }
-        ]
-        ++ (
-          if config.shell.zsh.enableNixShellPlugin
-          then [
-            {
-              name = "nix-shell";
-              file = "share/zsh-nix-shell/nix-shell.plugin.zsh";
-              src = pkgs.zsh-nix-shell;
-            }
-          ]
-          else [ ]
-        );
+        ];
     };
   };
-  }
+}
