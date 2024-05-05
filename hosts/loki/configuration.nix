@@ -22,7 +22,7 @@
   users.users."emph" = {
     isNormalUser = true;
     #shell = pkgs.zsh;
-    extraGroups = [ "wheel, audio, power" ];
+    extraGroups = [ "wheel" "audio" "power" ];
   };
 
   home-manager = {
@@ -36,7 +36,7 @@
         ./../../home-manager
       ];
 
-      kitty.enable = true;
+      cli.kitty.enable = true;
     };
   };
 
