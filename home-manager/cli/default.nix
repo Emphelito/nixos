@@ -7,6 +7,6 @@
   ];
   cli = {
       fastfetch.enable =
-        mkDefault true;
+        lib.mkDefault true;
         };
 }

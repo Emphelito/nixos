@@ -8,7 +8,7 @@
       lib.mkEnableOption "zsh";
 
     cli.zsh.enable = 
-        mkDefault true;
+        lib.mkDefault true;
   };
   config = lib.mkIf config.cli.zsh.enable {
     programs.zsh = {
