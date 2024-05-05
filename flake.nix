@@ -43,18 +43,20 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      nixosConfiguration."aegir" = nixpkgs.lib.nixosSystem {
-        extraSpecialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/aegir/configuration.nix
-        ];
-      };
-      nixosConfiguration."loki" = nixpkgs.lib.nixosSystem {
-        extraSpecialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/loki/configuration.nix
-          inputs.home-manager.nixosModules.default
-        ];
+      nixosConfigurations = {
+        aegir = nixpkgs.lib.nixosSystem {
+          extraSpecialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/aegir/configuration.nix
+          ];
+        };
+        loki = nixpkgs.lib.nixosSystem {
+          extraSpecialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/loki/configuration.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
       };
     };
 }
