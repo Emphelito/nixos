@@ -4,15 +4,32 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    
+
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
-        url = "github:hyprwm/hyprland-plugins";
-        inputs.hyprland.follows = "hyprland";
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
     };
-    # Home manager
-    home-manager.url = "github:nix-community/home-manager/";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    catppuccin-palette = {
+      url = "github:catppuccin/palette";
+      flake = false;
+    };
+
+    catppuccin-zathura = {
+      url = "github:catppuccin/zathura";
+      flake = false;
+    };
+
+    catppuccin-zsh-fsh = {
+      url = "github:catppuccin/zsh-fsh";
+      flake = false;
+    };
   };
 
   outputs =
@@ -41,7 +58,7 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs outputs; };
           # > Our main home-manager configuration file <
-          modules = [ ./home-manager ];
+          modules = [ ./hosts/aegir/home.nix ];
         };
       };
     };
