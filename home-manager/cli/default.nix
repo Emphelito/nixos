@@ -3,7 +3,7 @@
     ./fastfetch.nix
     ./kitty.nix
     #./nvim.nix
-    #./zsh.nix
+    ./zsh.nix
   ];
   cli.fastfetch.enable = 
     lib.mkDefault true;
