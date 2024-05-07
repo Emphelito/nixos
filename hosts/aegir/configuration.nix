@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
     ./../../nixos
   ];
 
@@ -21,12 +22,24 @@
   users.users."emph" = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "wheel, audio, power" ];
+    extraGroups = [ "wheel" "audio" "power" ];
   };
 
   home-manager = {
-    users."emph" = import ./home.nix;
+    users."emph" = {
+      home = {
+        username = "emph";
+        homeDirectory = "/home/emph";
+        stateVersion = "23.11";
+      };
+      imports = [
+        ./../../home-manager
+      ];
+      cli = {
+          kitty.enable = true;
+      };
     };
+  };
 
   networking.hostName = "aegir";
 

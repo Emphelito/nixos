@@ -2,14 +2,17 @@
   imports = [
     ./fastfetch.nix
     ./kitty.nix
-    #./nvim.nix
+    ./nvim.nix
     ./zsh.nix
   ];
   cli = {
-      fastfetch.enable =
-        lib.mkDefault true;
-      
-      zsh.enable = 
-        lib.mkDefault true;
-        };
+    fastfetch.enable =
+      lib.mkDefault true;
+
+    zsh.enable =
+      lib.mkdefault true;
+
+    nvim.enable =
+      lib.mkdefault true;
+  };
 }

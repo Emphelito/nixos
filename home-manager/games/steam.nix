@@ -10,6 +10,7 @@
       steam-run
       mangohud
       protonup
+      bottles
     ];
 
     home.sessionVariables = {

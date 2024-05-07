@@ -4,6 +4,6 @@
     ./cli
     ./games
     #./scripts
-    #./wm
+    #./desktop
   ];
 }
