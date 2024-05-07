@@ -1,7 +1,7 @@
 { pkgs, lib, ... }: {
   imports = [
     ./hyprland.nix
-    ./ags.nix
+    #./ags.nix
     ./extras.nix
   ];
 }
