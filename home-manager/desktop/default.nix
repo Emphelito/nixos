@@ -4,4 +4,5 @@
     ./ags.nix
     ./extras.nix
   ];
+  desktop = enable;
 }
