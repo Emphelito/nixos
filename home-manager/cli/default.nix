@@ -10,9 +10,9 @@
       lib.mkDefault true;
 
     zsh.enable =
-      lib.mkdefault true;
+      lib.mkDefault true;
 
     nvim.enable =
-      lib.mkdefault true;
+      lib.mkDefault true;
   };
 }
