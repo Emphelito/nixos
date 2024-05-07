@@ -5,7 +5,7 @@
       lib.mkEnableOption "enables Hyprland";
   };
 
-  config = lib mkIf config.desktop.hypr.enable {
+  config = lib.mkIf config.desktop.hypr.enable {
     wayland.windowManager.hyprland = {
       enable = true;
 
