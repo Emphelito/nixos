@@ -17,18 +17,5 @@
       BROWSER = "firefox";
     };
 
-    home.persistence."/persist/home" = {
-      allowOther = true;
-      directories = [
-        {
-          directory = ".mozilla/extensions";
-          method = "symlink";
-        }
-        {
-          directory = ".mozilla/firefox";
-          method = "symlink";
-        }
-      ];
-    };
   };
 }

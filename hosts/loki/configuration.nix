@@ -19,12 +19,6 @@
     };
   };
 
-  users.users."emph" = {
-    isNormalUser = true;
-    #shell = pkgs.zsh;
-    extraGroups = [ "wheel" "audio" "power" ];
-  };
-
   home-manager = {
     users."emph" = {
       home = {
@@ -42,6 +36,12 @@
           hypr.enable = true; 
       };
     };
+  };
+
+  users.users."emph" = {
+    isNormalUser = true;
+    shell = pkgs.zsh;
+    extraGroups = [ "wheel" "audio" "power" ];
   };
 
   networking.hostName = "loki";

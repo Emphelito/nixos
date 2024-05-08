@@ -30,6 +30,11 @@
       url = "github:catppuccin/zsh-fsh";
       flake = false;
     };
+    matugen = {
+      url = "github:/InioX/Matugen";
+    };
+
+    ags.url = "github:Aylur/ags";
   };
 
   outputs =
@@ -51,7 +56,8 @@
           ];
         };
         loki = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
+          specialArgs = { inherit inputs; };
+          pkgs = import nixpkgs { inherit system; };
           modules = [
             ./hosts/loki/configuration.nix
             home-manager.nixosModules.home-manager

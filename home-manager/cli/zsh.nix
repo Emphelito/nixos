@@ -34,5 +34,11 @@
           }
         ];
     };
+    home.packages = with pkgs; [
+        zathura
+        fzf
+        lf
+        unzip
+    ];
   };
 }

@@ -1,4 +1,7 @@
 { pkgs, lib, inputs, config, ... }: {
+  imports = [
+    inputs.matugen.nixosModules.default
+  ];
 
   options = {
     desktop.hypr.enable =
@@ -8,10 +11,13 @@
   config = lib.mkIf config.desktop.hypr.enable {
     wayland.windowManager.hyprland = {
       enable = true;
-
-      settings = {
-        
-      };
     };
+    home.packages = with pkgs; [
+      clipman
+      hyprpicker
+      swww
+      inputs.matugen.packages.${system}.default
+      Thunar
+    ];
   };
 }
