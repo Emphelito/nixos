@@ -40,7 +40,6 @@
 
   users.users."emph" = {
     isNormalUser = true;
-    programs.zsh.enable = true;
     shell = pkgs.zsh;
     extraGroups = [ "wheel" "audio" "power" ];
   };
