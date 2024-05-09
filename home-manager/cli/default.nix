@@ -4,6 +4,7 @@
     ./kitty.nix
     ./nvim.nix
     ./zsh.nix
+    ./git.nix
   ];
   cli = {
     fastfetch.enable =

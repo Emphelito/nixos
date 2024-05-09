@@ -10,6 +10,19 @@
     ./../../nixos
   ];
 
+  environment.systemPackages = with pkgs; [
+    home-manager
+    neovim
+    git
+    wget
+  ];
+
+  programs.virt-manager.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    libvirtd.enable = true;
+  };
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -21,7 +34,7 @@
 
   users.users."emph" = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "power" ];
+    extraGroups = [ "wheel" "audio" "power" "video" "networkmanager" ];
   };
 
   home-manager = {

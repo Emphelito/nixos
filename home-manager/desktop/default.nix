@@ -1,8 +1,9 @@
 { pkgs, lib, config, ... }: {
   imports = [
     ./hyprland.nix
-    #./ags.nix
+    ./ags.nix
     ./extras.nix
+    ./rofi.nix
   ];
   options = {
     desktop.enable =
@@ -15,6 +16,9 @@
         lib.mkDefault true;
 
       extras.enable = 
+        lib.mkDefault true;
+
+      ags.enable = 
         lib.mkDefault true;
     };
   };

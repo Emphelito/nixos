@@ -1,28 +1,35 @@
-{config, lib, pkgs, modulesPath, ...}: {
+{ config, lib, pkgs, modulesPath, ... }: {
 
-    imports =
-        [ (modulesPath + "/profiles/qemu-guest.nix")
-        ];
+  imports =
+    [
+      (modulesPath + "/profiles/qemu-guest.nix")
+    ];
 
-        boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
-        boot.initrd.kernelModules = [ ];
-        boot.kernelModules = ["kvm-amd"];
-        boot.extraModulePackages = [];
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+    settings.General.Experimental = true; # for gnome-bluetooth percentage
+  };
 
-        fileSystems."/" = {
-            device = "/dev/disk/by-uuid/fd55f2f5-ed7c-4e86-9778-2e97c9e4b2a2";
-            fsType = "ext4";
-        };
+  boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-amd" ];
+  boot.extraModulePackages = [ ];
 
-        fileSystems."/boot" = {
-            device = "/dev/disk/by-uuid/287A-D542";
-            fsType = "vfat";
-            options = [ "fmask=0022" "dmask=0022" ];
-        };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/fd55f2f5-ed7c-4e86-9778-2e97c9e4b2a2";
+    fsType = "ext4";
+  };
 
-        swapDevices = [];
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/287A-D542";
+    fsType = "vfat";
+    options = [ "fmask=0022" "dmask=0022" ];
+  };
 
-        networking.useDHCP = lib.mkDefault true;
+  swapDevices = [ ];
 
-        nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  networking.useDHCP = lib.mkDefault true;
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }

@@ -1,0 +1,19 @@
+
+.powermenu {
+    border-radius: 10px;
+}
+
+.powermenu-action {
+    background-color: $mantle;
+
+    border-color: transparent;
+}
+
+.powermenu button {
+    padding:30px;
+}
+
+.powermenu button:hover {
+
+    border-color: $text;
+}
