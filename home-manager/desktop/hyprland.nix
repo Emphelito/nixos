@@ -1,7 +1,4 @@
 { pkgs, lib, inputs, config, ... }: {
-  imports = [
-    inputs.matugen.nixosModules.default
-  ];
 
   options = {
     desktop.hypr.enable =
