@@ -17,7 +17,6 @@
       hyprpicker
       swww
       inputs.matugen.packages.${system}.default
-      Thunar
     ];
   };
 }
