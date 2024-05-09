@@ -25,6 +25,7 @@
   };
 
   home-manager = {
+    extraSpecialArgs = { inherit inputs; };
     users."emph" = {
       home = {
         username = "emph";
