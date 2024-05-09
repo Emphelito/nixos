@@ -37,6 +37,7 @@
       cli = {
         kitty.enable = true;
       };
+      desktop.enable = true;
     };
   };
 
