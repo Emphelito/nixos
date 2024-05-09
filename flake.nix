@@ -46,6 +46,7 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      specialArgs = { inherit inputs; };
     in
     {
       nixosConfigurations = {
@@ -56,7 +57,7 @@
           ];
         };
         loki = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          #specialArgs = { inherit inputs; };
           #pkgs = import nixpkgs { inherit system; };
           modules = [
             ./hosts/loki/configuration.nix
