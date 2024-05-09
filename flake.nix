@@ -57,7 +57,7 @@
         };
         loki = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
-          #pkgs = import nixpkgs { inherit system; };
+          pkgs = import nixpkgs { inherit system; };
           modules = [
             ./hosts/loki/configuration.nix
             home-manager.nixosModules.home-manager
