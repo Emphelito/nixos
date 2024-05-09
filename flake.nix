@@ -60,7 +60,9 @@
           #pkgs = import nixpkgs { inherit system; };
           modules = [
             ./hosts/loki/configuration.nix
-            home-manager.nixosModules.home-manager
+            home-manager.nixosModules.home-manager{
+                home-manager.extraSpecialArgs = specialArgs;
+            }
           ];
         };
       };
