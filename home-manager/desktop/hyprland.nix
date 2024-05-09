@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, config, ... }: {
+{ pkgs, lib, config, ... }: {
 
   options = {
     desktop.hypr.enable =
@@ -13,7 +13,7 @@
       clipman
       hyprpicker
       swww
-      inputs.matugen.packages.${system}.default
+      #inputs.matugen.packages.${system}.default
       #Thunar
     ];
   };
