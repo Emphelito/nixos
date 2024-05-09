@@ -13,8 +13,8 @@
       clipman
       hyprpicker
       swww
-      #inputs.matugen.packages.${system}.default
-      #Thunar
+      inputs.matugen.packages.${system}.default
+      Thunar
     ];
   };
 }
