@@ -13,6 +13,9 @@
     desktop = {
       hypr.enable =
         lib.mkDefault true;
+
+      extras.enable = 
+        lib.mkDefault true;
     };
   };
 }
