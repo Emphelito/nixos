@@ -169,7 +169,7 @@
       clipman
       hyprpicker
       swww
-      inputs.matugen.packages.${system}.default
+      #inputs.matugen.packages.${system}.default
       hyprlock
     ];
   };
