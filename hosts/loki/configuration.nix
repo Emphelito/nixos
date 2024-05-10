@@ -18,11 +18,7 @@
     curl
   ];
 
-  programs.virt-manager.enable = true;
-  virtualisation = {
-    docker.enable = true;
-    libvirtd.enable = true;
-  };
+  programs.zsh.enable = true;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -37,6 +33,7 @@
 
   users.users."emph" = {
     isNormalUser = true;
+    shell = pkgs.zsh;
     extraGroups = [ "wheel" "audio" "power" "video" "networkmanager" ];
   };
 

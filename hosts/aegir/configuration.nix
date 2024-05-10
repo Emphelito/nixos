@@ -23,9 +23,6 @@
   vmMod.enable = true;
 
   programs.zsh.enable = true;
-  programs = {
-    home-manager.enable = true;
-  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
