@@ -18,11 +18,11 @@
     curl
   ];
 
-#  programs.virt-manager.enable = true;
-#  virtualisation = {
-#    docker.enable = true;
-#    libvirtd.enable = true;
-#  };
+  programs.virt-manager.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    libvirtd.enable = true;
+  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
