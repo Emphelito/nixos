@@ -15,6 +15,7 @@
     neovim
     git
     wget
+    curl
   ];
 
   programs.virt-manager.enable = true;
@@ -31,6 +32,8 @@
       experimental-features = "nix-command flakes";
     };
   };
+
+  programs.zsh.enable = true;
 
   users.users."emph" = {
     isNormalUser = true;

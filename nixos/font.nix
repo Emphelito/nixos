@@ -2,7 +2,6 @@
   fonts.packages = with pkgs; [
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" ]; })
     cm_unicode
-    corefonts
   ];
 
   fonts.enableDefaultPackages = true;
