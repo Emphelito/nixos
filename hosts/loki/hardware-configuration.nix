@@ -5,12 +5,6 @@
       (modulesPath + "/profiles/qemu-guest.nix")
     ];
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = false;
-    settings.General.Experimental = true; # for gnome-bluetooth percentage
-  };
-
   boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];

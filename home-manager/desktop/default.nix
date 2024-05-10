@@ -4,6 +4,7 @@
     ./ags.nix
     ./extras.nix
     ./rofi.nix
+    ./fonts.nix
   ];
   options = {
     desktop.enable =
@@ -19,6 +20,9 @@
         lib.mkDefault true;
 
       ags.enable = 
+        lib.mkDefault true;
+
+      rofi.enable = 
         lib.mkDefault true;
     };
   };

@@ -7,9 +7,16 @@
 
   config = lib.mkIf config.desktop.extras.enable {
     home.packages = with pkgs; [
-        gtk3
-        accountsservice
-        
-        ];
+      gtk3
+      accountsservice
+      font-awesome
+      dconf
+    ];
+    gtk = {
+      enable = true;
+    };
+    qt = {
+      enable = true;
+    };
   };
 }

@@ -4,7 +4,7 @@
     ./services
     ./font.nix
     ./locale.nix
-    # ./nvidia.nix
+    ./nvidia.nix
     #./sddm.nix
     #./vm.nix
   ];

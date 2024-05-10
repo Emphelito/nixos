@@ -5,7 +5,7 @@
 , ...
 }: {
   imports = [
-    ./hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
     inputs.home-manager.nixosModules.default
     ./../../nixos
   ];
@@ -17,6 +17,10 @@
     wget
     curl
   ];
+
+  programs = {
+    home-manager.enable = true;
+  };
 
   programs.virt-manager.enable = true;
   virtualisation = {
@@ -51,10 +55,6 @@
       imports = [
         ./../../home-manager
       ];
-      cli = {
-        kitty.enable = true;
-      };
-      desktop.enable = true;
     };
   };
 

@@ -38,6 +38,8 @@
         zathura
         fzf
         lf
+        curl
+        wget
         unzip
     ];
   };

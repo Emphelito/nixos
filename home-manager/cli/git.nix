@@ -15,4 +15,5 @@ in
     userEmail = email;
     userName = name;
   };
+  programs.gh.enable = true;
 }
