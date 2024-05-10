@@ -2,7 +2,7 @@
 
   options = {
     desktop.rofi.enable =
-      lib.mkEnableOption "enables Hyprland";
+      lib.mkEnableOption "enables Rofi-Wayland";
   };
 
   config = lib.mkIf config.desktop.rofi.enable {

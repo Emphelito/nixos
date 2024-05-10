@@ -17,15 +17,14 @@
     wget
     curl
   ];
+ 
+  sddmMod.enable = true;
+  nvidiaMod.enable = true;
+  vmMod.enable = true;
 
+  programs.zsh.enable = true;
   programs = {
     home-manager.enable = true;
-  };
-
-  programs.virt-manager.enable = true;
-  virtualisation = {
-    docker.enable = true;
-    libvirtd.enable = true;
   };
 
   boot.loader.systemd-boot.enable = true;
@@ -42,7 +41,6 @@
     };
   };
 
-  programs.zsh.enable = true;
 
   users.users."emph" = {
     isNormalUser = true;
@@ -61,7 +59,6 @@
       imports = [
         ./../../home-manager
       ];
-      nvidiaMod.enable = true;
       cli = {
         kitty.enable = true;
       };

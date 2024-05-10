@@ -5,7 +5,7 @@
     ./font.nix
     ./locale.nix
     ./nvidia.nix
-    #./sddm.nix
-    #./vm.nix
+    ./sddm.nix
+    ./vm.nix
   ];
 }
