@@ -29,8 +29,6 @@
     };
   };
 
-  programs.zsh.enable = true;
-
   users.users."emph" = {
     isNormalUser = true;
     shell = pkgs.zsh;
