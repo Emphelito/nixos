@@ -27,7 +27,7 @@
           gaps_out = 10;
           border_size = 2;
 
-          layout = dwindle;
+          layout = "dwindle";
 
           allow_tearing = false;
 
@@ -49,7 +49,7 @@
             passes = 3;
           };
 
-          blurls = hyprlock;
+          blurls = "hyprlock";
 
           drop_shadow = true;
           shadow_range = 4;
@@ -58,7 +58,7 @@
         };
 
         animations = {
-          enable = yes;
+          enable = true;
 
           bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
 
