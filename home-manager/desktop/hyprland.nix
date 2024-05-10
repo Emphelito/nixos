@@ -16,7 +16,7 @@
         monitor = ",3440x1440@144Hz,auto,auto";
 
         input = {
-          kb_layout = us;
+          kb_layout = "us";
 
           follow_mouse = 1;
           sensitivity = -0.5;
