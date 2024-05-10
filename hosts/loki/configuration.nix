@@ -18,10 +18,6 @@
     curl
   ];
 
-  programs = {
-    home-manager.enable = true;
-  };
-
   programs.virt-manager.enable = true;
   virtualisation = {
     docker.enable = true;
