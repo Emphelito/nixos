@@ -32,6 +32,8 @@
     powerOnBoot = false;
   };
 
+  services.gvfs.enable = true;
+
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
