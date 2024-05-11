@@ -3,6 +3,7 @@
     ./discord.nix
     ./spotify.nix
     ./firefox.nix
+    ./gnome-apps.nix
   ];
   options = {
     apps.enable =
@@ -18,6 +19,9 @@
         lib.mkDefault true;
 
       firefox.enable = 
+        lib.mkDefault true;
+
+      gnome.enable = 
         lib.mkDefault true;
     };
   };

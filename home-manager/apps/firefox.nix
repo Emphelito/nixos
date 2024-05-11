@@ -1,7 +1,7 @@
-{
-  config,
-  lib,
-  ...
+{ pkgs
+, config
+, lib
+, ...
 }: {
   options = {
     apps.firefox.enable =

@@ -59,6 +59,7 @@
       cli = {
         kitty.enable = true;
       };
+      apps.enable = true;
       desktop.enable = true;
       game.enable = true;
     };
